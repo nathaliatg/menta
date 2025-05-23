@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Adicione isto para standalone
-import { FormsModule } from '@angular/forms'; // Para o formulário
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-contact',
-  standalone: true, // É uma parte "sozinha" do bolo
+  standalone: true, 
   imports: [
-    CommonModule, // Para mostrar ou esconder coisas
-    FormsModule   // Para o formulário
+    CommonModule, 
+    FormsModule   
   ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
@@ -26,7 +26,6 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Quando a pessoa clica em "Enviar", isso aparece no lugar do "livro de receitas"
     console.log('Formulário de Contato Enviado:', this.contactForm);
     alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
     // Limpa o formulário para a próxima mensagem
