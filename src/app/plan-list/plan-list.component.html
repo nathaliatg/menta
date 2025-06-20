@@ -1,5 +1,6 @@
 <div class="plan-list-section container">
   <h2 class="section-title">Encontre o Plano Odontológico Ideal</h2>
+  <h3 class="section-subtitle">Busque e filtre os planos que mais se adequam às suas necessidades</h3>
 
   <div class="search-filter-controls">
     <div class="search-input-group">
@@ -13,7 +14,7 @@
     </div>
 
     <div class="filter-dropdown-group">
-      <i class="fas fa-chevron-down"></i> <select [(ngModel)]="filterValue" (change)="applyFilters()" class="form-control">
+      <i class="fas fa-filter"></i> <select [(ngModel)]="filterValue" (change)="applyFilters()" class="form-control">
         <option value="">Filtrar por preço</option>
         <option value="50">Até R$ 50</option>
         <option value="100">Até R$ 100</option>
@@ -32,12 +33,22 @@
   </div>
 
   <div class="plan-cards-grid">
-    <div *ngFor="let plan of filteredPlans" class="plan-card">
+    <div *ngFor="let plan of filteredPlans" class="plan-card" [ngClass]="{'popular-plan': plan.isPopular}">
+      <div class="popular-badge" *ngIf="plan.isPopular">
+        Mais Popular!
+      </div>
+
       <h3 class="plan-name">{{ plan.nome }}</h3>
-      <p class="plan-value">R$ {{ plan.valor | number:'1.2-2' }}</p> <p class="plan-description">{{ plan.descricao }}</p>
+      <p class="plan-value">
+        <span class="currency">R$</span>
+        <span class="main-price">{{ plan.valor.split('.')[0] }}</span> <span class="cents">.{{ plan.valor.split('.')[1] || '00' }}</span> </p>
+      <p class="plan-description">{{ plan.descricao }}</p>
+
       <ul class="plan-features">
-        <li *ngFor="let feature of plan.features"><i class="fas fa-check-circle"></i> {{ feature }}</li> </ul>
-      <button class="details-button">Ver Mais</button>
-    </div>
+        <li *ngFor="let feature of plan.features">
+          <i class="fas fa-check-circle feature-icon"></i> {{ feature }}
+        </li>
+      </ul>
+      <button class="select-plan-button">Selecionar Plano</button> </div>
   </div>
 </div>

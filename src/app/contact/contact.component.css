@@ -1,94 +1,336 @@
-/* Espaço e cor de fundo da seção de contato */
+/* contact.component.css */
+
 .contact-section {
-  padding-top: 60px;    
-  padding-right: 20px;  
-  padding-left: 20px;   
-  padding-bottom: 0px;
-  background-color: #f8f9fa;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #add0b3 100%); /* Mantendo o fundo suave */
+ }
+
+/* Título principal da seção de contato */
+.section-title-contact {
   text-align: center;
+  font-size: 2.5rem;
+  color: #8e8eb2; 
+  margin-bottom: 10px; 
+  font-weight: 700;
 }
 
-.contact-section .section-title {
-  margin-bottom: 30px;
-  color: #1e73c5;
+/* Subtítulo da seção de contato (geral) */
+.section-subtitle-contact {
+  text-align: center;
+  font-size: 1.2rem; /* Título secundário maior */
+  margin-bottom: 60px; 
+  font-weight: 400;
 }
 
-/* Onde fica o formulário */
-.contact-form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px 30px 10px; /* <--- Mudei o padding-bottom de 30px para 10px ou menos */
-  background-color: #fdfdfd;
+/* --- SEÇÃO SUPERIOR (IMAGEM + FORMULÁRIO) --- */
+.main-contact-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 80px auto; /* Centraliza e adiciona espaço abaixo do wrapper do formulário */
+  align-items: stretch;
+  background-color: white; 
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra suave para o container */
+  overflow: hidden; /* Garante que tudo dentro respeite o border-radius */
 }
 
-/* Espaço entre os campos */
+/* Left Column: Image Placeholder (Container para a imagem e overlay) */
+.contact-image-placeholder {
+  flex: 1; /* Ocupa o espaço disponível */
+  min-width: 400px; /* Largura mínima para a imagem */
+  background-color: #e0e0e0; 
+  border-radius: 12px 0 0 12px;
+  min-height: 400px; 
+  display: flex; /* Para centralizar a imagem dentro do container */
+  align-items: center;
+  justify-content: center; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+/* Overlay sutil na imagem */
+.contact-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 92, 43, 0.2); 
+  z-index: 1; 
+}
+
+.contact-actual-image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  display: block; 
+  position: relative; /* Garante que a imagem fique abaixo do overlay */
+  z-index: 0;
+}
+
+/* Right Column: Contact Form Card */
+.contact-form-card {
+  flex: 2; 
+  min-width: 350px; 
+  background-color: white; 
+  border-radius: 0 12px 12px 0; 
+  padding: 40px;
+}
+
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .form-group {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-  display: block;
+  font-size: 0.9rem;
+  color: var(--cor-texto-principal);
   margin-bottom: 8px;
-  font-weight: 500;
-  color: #444;
+  font-weight: 600;
 }
 
-/* Estilo dos campos de texto */
 .form-group input,
 .form-group textarea {
-  width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  color: var(--cor-texto-principal);
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
+  border-color: var(--cor-primaria-claro);
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(var(--cor-primaria-claro-rgb), 0.3);
 }
 
-.form-group textarea {
-  resize: vertical; 
-  min-height: 100px;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--cor-texto-secundario);
+  opacity: 0.7;
 }
 
-/* Botão de enviar */
 .submit-button {
-  background-color: #00376c; 
-  color: #ffffff; 
-  padding: 1rem 2rem; 
-  border: none; 
-  border-radius: 30px; 
-  font-size: 1.2rem;
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
-  display: block; 
-  margin: 20px auto; 
-  margin-bottom: 0;
-  width: fit-content;
+  background-color: var(--cor-primaria-escuro); /* Verde escuro para o botão */
+  color: var(--cor-texto-claro); /* Texto claro para o botão */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  align-self: flex-start;
 }
 
 .submit-button:hover {
-  background-color: #ffffff; 
-  color: #00376c;
+  background-color: #004a20; /* Tom mais escuro no hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Como se ajusta em telas menores */
-@media (max-width: 576px) {
-  .contact-form-container {
-    padding: 20px;
+/* --- SEÇÃO INFERIOR (INFORMAÇÕES DE CONTATO - Agora com Cards Individuais) --- */
+/* Título específico para a seção de informações de contato */
+.contact-info-section-bottom {
+  max-width: 1200px; 
+  margin: 80px auto 0 auto; 
+  padding: 60px 20px; 
+  background-color: transparent; 
+  border-radius: 12px;
+  box-shadow: none; 
+  text-align: center; 
+}
+
+/* contact.component.css */
+
+.contact-info-title-bottom {
+  font-size: 2.0rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: -15px;
+}
+
+.contact-info-title-bottom-gradient {
+  background: linear-gradient(45deg, #005c2b, #003017); /* Gradiente do verde escuro para o verde claro */
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  color: transparent; 
+  font-size: 2.5rem;
+  display: inline;
+  margin-bottom: 15px; 
+  font-weight: 700;
+}
+
+/* Subtítulo específico para a seção inferior de contato */
+.section-subtitle-contact-bottom {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 40px; /* Espaço abaixo do subtítulo */
+  max-width: 700px; /* Limita a largura do texto */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Container para a grade de cards */
+.contact-items-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 30px; /* Espaço entre os cards */
+  justify-content: center; 
+  padding-top: 20px; /* Espaço entre o subtítulo e os cards */
+}
+
+/* Estilo de cada card de informação individual */
+.contact-info-card {
+  background-color: white; 
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  padding: 30px 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px); /* Leve elevação no hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada no hover */
+}
+
+/* Wrapper para o ícone com fundo circular */
+.icon-wrapper {
+  /* REMOVA ou COMENTE a linha existente: background-color: var(--cor-primaria-claro); */
+
+  /* NOVO: Gradiente de fundo para o círculo do ícone */
+  background: linear-gradient(45deg, #add0b3, #99b39c); 
+
+  border-radius: 50%;
+  width: 70px; /* Tamanho do círculo */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Espaço abaixo do ícone */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Sombra no círculo do ícone */
+}
+
+.icon-wrapper i {
+  font-size: 2.2rem; /* Tamanho do ícone dentro do círculo */
+  color: #ffffff; /* Cor do ícone */
+}
+
+.contact-info-card h4 {
+  font-size: 1.25rem; /* Título do item (Telefone, E-mail) */
+  color: var(--cor-primaria-escuro); /* Verde escuro para o título */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-info-card p {
+  font-size: 1rem; /* Tamanho do texto de informação */
+  color: var(--cor-texto-secundario); /* Cor principal para o texto */
+  line-height: 1.4;
+  margin-bottom: 5px; /* Espaço entre as linhas de texto */
+}
+
+.contact-info-card .small-text {
+  font-size: 0.85rem; /* Texto menor para descrições como "Ligue para nós" */
+  color: var(--cor-texto-secundario); /* Cor mais suave */
+  margin-top: 5px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+  .main-contact-content-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
-  .form-group input,
-  .form-group textarea,
+  .contact-image-placeholder,
+  .contact-form-card {
+    min-width: unset;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 12px;
+  }
+  .contact-image-placeholder {
+    min-height: 220px;
+    height: 220px;
+  }
+  .contact-actual-image {
+    object-fit: cover; /* Mantém cover no mobile */
+  }
   .submit-button {
-    font-size: 0.95rem;
-    padding: 10px 12px;
+    width: 100%;
+    align-self: center;
+  }
+
+  /* Ajustes para a seção de informações em tablets */
+  .contact-info-section-bottom {
+    padding: 40px 15px; 
+    margin-top: 60px; 
+  }
+  .contact-items-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mantém flexibilidade */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-card {
+    padding: 25px 15px; /* Reduz padding nos cards */
+  }
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  .icon-wrapper i {
+    font-size: 2rem;
+  }
+  .contact-info-card h4 {
+    font-size: 1.15rem;
+  }
+  .contact-info-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 50px 15px;
+  }
+  .section-subtitle-contact {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+  .main-contact-content-wrapper,
+  .contact-info-section-bottom {
+    padding: 25px;
+  }
+  .contact-info-title-bottom {
+    font-size: 1.6rem;
+  }
+  .section-subtitle-contact-bottom { 
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  .contact-items-grid-container {
+    grid-template-columns: 1fr; 
+    gap: 20px;
   }
 }

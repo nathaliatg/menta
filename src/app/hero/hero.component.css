@@ -2,31 +2,59 @@
 
 /* Seção principal */
 .hero-section {
-  background-color: #f8f8f9; 
-  padding: 0px 0; 
+  background: linear-gradient(to bottom, #f8f8f9, var(--cor-fundo-suave));
+  padding: 80px 0; 
   overflow: hidden; 
 }
 
-/* Container do conteúdo (texto + imagem) */
-.hero-content {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 20px; 
-}
 
 /* Bloco de texto */
 .hero-text {
   flex: 1; 
   padding-right: 40px;
-  max-width: 50%; 
+  text-align: center;
+  max-width: 100%; 
+}
+
+.dental-moto {
+  background-color: var(--cor-primaria-claro); 
+  color: var(--cor-primaria-escuro); 
+  padding: 8px 20px; /* Padding para dar espaço ao redor do texto */
+  border-radius: 25px; /* Bem arredondado para parecer um "badge" */
+  font-size: 1rem;
+  font-weight: 600; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
+  margin-bottom: 20px; 
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  max-width: fit-content; 
+}
+
+.dental-moto i {
+  font-size: 1.1rem;
 }
 
 .hero-text h2 {
-  font-size: 2.8rem;
-  color: #005393;
+  margin-top: 20px; 
+}
+
+.hero-text h2 {
+  font-size: 4rem;
+  line-height: 1.2;
+  background-image: linear-gradient(to right, var(--cor-primaria-escuro), var(--cor-primaria-claro));
+  -webkit-background-clip: text; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Para navegadores baseados em WebKit */
+  color: transparent;
+}
+
+.hero-text h3 {
+  font-size: 2.5rem;
+  color: #8e8eb2;
   margin-bottom: 20px; 
   line-height: 1.2;
 }
@@ -39,9 +67,10 @@
 
 /* Estilização do Preço (R$ 30,00) */
 .price-info p {
-  font-size: 1.2rem; 
+  font-size: 1.5rem; 
   color: var(--cor-texto-escuro);
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .price-display {
@@ -49,23 +78,27 @@
   align-items: baseline; 
   font-weight: bold;
   color: var(--cor-texto-escuro); 
-  margin-bottom: 30px; 
+  justify-content: center;
+  margin-bottom: 60px; 
 }
 
 .currency {
   font-size: 1.5rem;
   margin-right: 5px; 
+  text-align: center;
   color: var(--cor-texto-escuro); 
 }
 
 .main-price {
   font-size: 3.5rem;
   line-height: 1; 
+  text-align: center;  
 }
 
 .cents {
   font-size: 1.5rem;
   line-height: 1;
+   text-align: center; 
   color: var(--cor-texto-escuro);
   position: relative; 
   top: -0.8em; 
@@ -74,34 +107,23 @@
 
 /* Estilo para o Botão */
 .primary-button {
-  background-color: #0069d9; 
+  background-color: #8e8eb2; 
   text-decoration: none;
+  font-weight: bold;
   color: #ffffff; 
-  padding: 1rem 2rem; 
+  padding: 1rem 1rem; 
   border: none; 
-  border-radius: 30px; 
-  font-size: 1.2rem; 
+  border-radius: 15px; 
+  font-size: 1.3rem; 
   cursor: pointer; 
   transition: background-color 0.3s ease; 
 }
 
 .primary-button:hover {
   text-decoration: none;
-  background-color: #005393; 
+  background-color: #c4c4ea; 
 }
 
-/* Estilos da Imagem */
-.hero-image {
-  flex: 1;
-  text-align: right; 
-}
-
-.hero-image img {
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
-  object-fit: contain; 
-}
 
 /* Media Queries para Responsividade */
 @media (max-width: 992px) {
@@ -123,7 +145,7 @@
   }
 
   .hero-text h2 {
-    font-size: 2.2rem; 
+    font-size: 4rem; 
   }
 
   .hero-text p {
@@ -174,7 +196,7 @@
     padding: 30px 10px;
   }
   .hero-text h2 {
-    font-size: 1.8rem;
+    font-size: 4rem;
   }
   .hero-text p {
     font-size: 1rem;

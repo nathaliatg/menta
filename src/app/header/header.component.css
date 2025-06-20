@@ -1,12 +1,12 @@
 /* header.component.css */
 
 .marlin-header {
-  background-color: #005393; 
+  background-color: #3c4a3e;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   padding: 15px 0;
-  position: sticky; 
+  position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .header-content {
@@ -14,23 +14,32 @@
   justify-content: space-between; 
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .logo img {
-  height: 40px; 
+  height: 40px;
 }
+
+/* NOVO: Estilos para o grupo da direita */
+.header-right-group {
+  display: flex; /* Transforma este grupo em um flex container */
+  align-items: center; /* Alinha os itens (nav e button) verticalmente */
+  gap: 30px; /* Espaço entre a navegação e o botão de Login */
+}
+
 
 .main-nav ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
+  gap: 30px; /* Espaço entre os links de navegação */
 }
 
 .main-nav li {
-  margin-left: 30px; 
+  margin-left: 0;
 }
 
 .main-nav a {
@@ -42,38 +51,47 @@
 }
 
 .main-nav a:hover {
-  color: var(--cor-secundaria-azul); 
+  color: #92b89c;
 }
 
 .login-button {
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  padding: 8px 15px;
-  border-radius: 10px;
+  background-color: var(--cor-primaria-claro);
+  border: none;
+  color: var(--cor-primaria-escuro);
+  padding: 8px 18px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 0.9rem;
-  display: flex; 
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
   align-items: center;
-  gap: 10px; 
+  gap: 8px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.login-button i {
-  font-size: 1.2rem; 
+.login-button:hover {
+  background-color: #92b89c; /* Cor ao passar o mouse */
+  color: var(--cor-texto-principal); /* Cor do texto ao passar o mouse */
 }
 
-.login-button:hover {
-  background-color: #ffffff;
-  color: var(--cor-principal-azul); 
+.login-button i {
+  font-size: 1.2rem;
 }
+
 
 /* Media Query para telas menores */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
-    align-items: center; 
-    padding: 15px; 
+    align-items: center;
+    padding: 15px;
+  }
+
+  /* Em telas menores */
+  .header-right-group {
+    flex-direction: column;
+    width: 100%; /* Ocupa a largura total para alinhar itens */
+    gap: 15px; /* Ajuste o espaçamento em mobile */
   }
 
   .logo {
@@ -81,19 +99,19 @@
   }
 
   .main-nav {
-    margin: 15px 0; 
-    width: 100%; 
+    margin: 15px 0;
+    width: 100%;
   }
 
   .main-nav ul {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
     text-align: center;
   }
 
   .main-nav li {
-    margin: 0; 
-    padding: 5px 0; 
+    margin: 0;
+    padding: 5px 0;
   }
 
   .main-nav a {
@@ -101,24 +119,24 @@
   }
 
   .login-button {
-    margin-top: 15px; 
-    width: 80%; 
+    margin-top: 0; /* Ajustado para melhor alinhamento com o novo grupo */
+    width: 80%;
     max-width: 200px;
-    justify-content: center; 
+    justify-content: center;
   }
 }
 
 /* Telas ainda menores se necessário */
 @media (max-width: 480px) {
   .header-content {
-    padding: 10px; 
+    padding: 10px;
   }
 
   .logo img {
-    height: 35px; 
+    height: 35px;
   }
 
   .main-nav a {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }

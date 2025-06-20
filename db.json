@@ -1,46 +1,75 @@
 {
   "planos": [
     {
-        "id": 1,
-        "nome": "Plano Dental 1",
-        "valor": "30.00",
-        "descricao": "Rol ANS, Prótese unitária em dentes anteriores e posteriores em cerômero, Procedimentos em ortodontia",
-        "features": ["Rol ANS", "Prótese unitária (cerômero)", "Ortodontia"]
+      "id": 1,
+      "nome": "Essencial", 
+      "valor": "30.00",
+      "descricao": "Ideal para quem busca o essencial em saúde bucal, com cobertura completa para procedimentos básicos e início de tratamentos mais específicos.",
+      "features": [
+        "Cobertura Básica Rol ANS",
+        "Prótese unitária (cerômero) em dentes essenciais",
+        "Procedimentos iniciais em Ortodontia"
+      ]
     },
     {
-        "id": 2,
-        "nome": "Plano Dental 2",
-        "valor": "80.00",
-        "descricao": "Plano Dental 1, Prótese removível (inclusive prótese total), prótese unitária em dentes anteriores e posteriores em cerômero.",
-        "features": ["Prótese removível", "Prótese total", "Dentes anteriores e posteriores"]
+      "id": 2,
+      "nome": "Clássico", 
+      "valor": "80.00",
+      "descricao": "Ampliando as possibilidades, este plano oferece tudo do Plano 1, mais a flexibilidade de próteses removíveis, garantindo seu conforto e estética.",
+      "features": [
+        "Inclusão do Plano Dental 1",
+        "Próteses Removíveis (parcial e total)",
+        "Restauração Estética em dentes anteriores e posteriores"
+      ]
     },
     {
-        "id": 3,
-        "nome": "Plano Dental 3",
-        "valor": "150.00",
-        "descricao": "Plano Dental 2, Documentação ortodôntica completa*, manutenção mensal, clareamento com moldeira (gel + moldeira) e placa miorrelaxante.",
-        "features": ["Documentação ortodôntica", "Manutenção mensal", "Clareamento com moldeira", "Placa miorrelaxante"]
+      "id": 3,
+      "nome": "Plus", 
+      "valor": "150.00",
+      "descricao": "Nosso plano mais popular para quem busca um sorriso completo e radiante. Inclui tratamentos ortodônticos e estéticos avançados.",
+      "features": [
+        "Cobertura do Plano Dental 2",
+        "Documentação Ortodôntica Completa",
+        "Manutenção Ortodôntica Mensal",
+        "Clareamento Dental com Moldeira (Gel + Moldeira)",
+        "Placa Miorrelaxante para bruxismo"
+      ]
     },
     {
-        "id": 4,
-        "nome": "Plano Dental 4",
-        "valor": "200.00",
-        "descricao": "Plano Dental 3, Prótese fixa, inclusive em porcelana, e clareamento em consultório.",
-        "features": ["Prótese fixa", "Porcelana", "Clareamento em consultório"]
+      "id": 4,
+      "nome": "Premium", 
+      "valor": "200.00",
+      "descricao": "Para quem exige excelência e durabilidade, este plano adiciona opções de próteses fixas e um clareamento dental de alto impacto no consultório.",
+      "features": [
+        "Benefícios do Plano Dental 3",
+        "Prótese Fixa (incluindo porcelana)",
+        "Clareamento Dental em Consultório (a laser ou LED)"
+      ]
     },
     {
-        "id": 5,
-        "nome": "Plano Dental 5",
-        "valor": "250.00",
-        "descricao": "Plano Dental 4, Cobertura ortodôntica com alinhador invisível com instalação, Prótese unitária em dentes anteriores e posteriores em cerômero.",
-        "features": ["Ortodontia (alinhador invisível)", "Instalação inclusa", "Prótese unitária (cerômero)"]
+      "id": 5,
+      "nome": "Estético", 
+      "valor": "250.00",
+      "descricao": "A vanguarda da ortodontia está aqui! Tenha um sorriso alinhado com a discrição e tecnologia do alinhador invisível, além de próteses de alta qualidade.",
+      "features": [
+        "Vantagens do Plano Dental 4",
+        "Ortodontia com Alinhador Invisível (Instalação Inclusa)",
+        "Prótese Unitária de Cerômero (Dentes Anteriores e Posteriores)"
+      ]
     },
     {
-        "id": 6,
-        "nome": "Plano Dental 6",
-        "valor": "300.00",
-        "descricao": "Plano Dental 5, Restauração, Extração, Clareamento em gel e moldeira (caseiro), Placa miorrelaxante, E muito mais.",
-        "features": ["Restauração", "Extração", "Clareamento em gel", "Moldeira caseira", "Placa miorrelaxante"]
+      "id": 6,
+      "nome": "Total Care", 
+      "valor": "300.00",
+      "descricao": "O plano mais completo para sua tranquilidade total. Cobertura máxima para restaurações, extrações e tratamentos estéticos e funcionais diversos.",
+      "features": [
+        "Todos os benefícios do Plano Dental 5",
+        "Restaurações de Alta Performance",
+        "Extrações (incluindo siso)",
+        "Clareamento Dental Completo (Gel + Moldeira Caseira)",
+        "Placa Miorrelaxante Personalizada",
+        "E muito mais para sua saúde e bem-estar!"
+      ]
     }
   ],
   "contatos": []

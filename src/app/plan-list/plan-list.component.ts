@@ -10,6 +10,7 @@ interface Plan {
   valor: string; 
   descricao: string; 
   features?: string[];
+  isPopular?: boolean;
 }
 
 @Component({
@@ -47,6 +48,10 @@ export class PlanListComponent implements OnInit {
           ...plan,
           valor: plan.valor.replace(',', '.') 
       }));
+      const popularPlan = this.plans.find(p => p.nome === 'Plus');
+      if (popularPlan) {
+         popularPlan.isPopular = true;
+      }
       this.applyFilters(); 
     } catch (err: any) {
       console.error('Erro ao buscar planos:', err);

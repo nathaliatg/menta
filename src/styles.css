@@ -5,6 +5,20 @@
   padding: 0; 
 }
 
+:root {
+  --cor-primaria-escuro: #005c2b; /* Verde Escuro */
+  --cor-primaria-claro: #add0b3; /* Verde Menta Claro */
+  --cor-secundaria-pessego: #f2c3a7; /* Pêssego/Salmão Claro */
+  --cor-secundaria-creme: #fde4b4; /* Amarelo Suave/Creme */
+  --cor-fundo-suave: #e7e6ed; /* Cinza/Lilás Suave */
+
+  /* Cores para texto */
+  --cor-texto-principal: var(--cor-primaria-escuro);
+  --cor-texto-secundario: #4a4a4a; /* Um cinza escuro para textos normais, se a paleta não tiver um */
+  --cor-texto-claro: white;
+  --cor-borda-card: #ccc; /* Sugestão para borda padrão dos cards */
+}
+
 html {
   scroll-behavior: smooth; 
 }
