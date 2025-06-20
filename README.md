@@ -49,7 +49,7 @@ Este projeto foi construído para atender aos seguintes requisitos, comprovando 
 ---
 
 ##  Prévia
-![Prévia do projeto](https://raw.githubusercontent.com/nathaliatg/menta/refs/heads/main/menta.gif)
+![Prévia do projeto](https://raw.githubusercontent.com/nathaliatg/menta/refs/heads/main/mentagif.gif)
 ---
 ##  Como Rodar o Projeto Localmente
 
