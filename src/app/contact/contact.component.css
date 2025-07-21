@@ -334,3 +334,16 @@
     gap: 20px;
   }
 }
+
+/* Corrige inputs com erro sem quebrar o layout */
+.form-group input.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: #dc3545; /* Vermelho padrão Bootstrap */
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.1);
+}
+
+/* Corrige inputs válidos */
+.form-group input.ng-valid.ng-touched,
+.form-group textarea.ng-valid.ng-touched {
+  border-color: #28a745; /* Verde de sucesso */
+}

@@ -9,73 +9,117 @@
       </div>
 
       <div class="contact-form-card">
-        <form (ngSubmit)="onSubmit()">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name">Nome Completo *</label>
-            <input type="text" id="name" name="name" [(ngModel)]="contactForm.name" required placeholder="Seu nome completo">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="contactForm.name"
+              required
+              #name="ngModel"
+              placeholder="Seu nome completo"
+            />
+            <div *ngIf="name.invalid && name.touched" class="error-message">
+              O nome é obrigatório.
+            </div>
           </div>
 
           <div class="form-group">
             <label for="email">E-mail *</label>
-           <input type="email" id="email" name="email" [(ngModel)]="contactForm.email" required placeholder="seu&#64;email.com">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="contactForm.email"
+              required
+              #email="ngModel"
+              placeholder="seu@email.com"
+            />
+            <div *ngIf="email.invalid && email.touched" class="error-message">
+              Insira um e-mail válido.
+            </div>
           </div>
 
           <div class="form-group">
             <label for="phone">Telefone</label>
-            <input type="tel" id="phone" name="phone" [(ngModel)]="contactForm.phone" placeholder="(11) 9999-9999">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="contactForm.phone"
+              #phone="ngModel"
+              pattern="\\(\\d{2}\\) \\d{4,5}-\\d{4}"
+              placeholder="(11) 9999-9999"
+            />
+            <div *ngIf="phone.invalid && phone.touched" class="error-message">
+              Insira um telefone no formato (99) 99999-9999.
+            </div>
           </div>
 
           <div class="form-group">
             <label for="message">Mensagem *</label>
-            <textarea id="message" name="message" rows="5" [(ngModel)]="contactForm.message" required placeholder="Como podemos ajudar você?"></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              [(ngModel)]="contactForm.message"
+              required
+              #message="ngModel"
+              placeholder="Como podemos ajudar você?"
+            ></textarea>
+            <div *ngIf="message.invalid && message.touched" class="error-message">
+              A mensagem é obrigatória.
+            </div>
           </div>
 
-          <button type="submit" class="submit-button">Enviar Mensagem</button>
+          <button type="submit" class="submit-button" [disabled]="form.invalid">Enviar mensagem</button>
         </form>
       </div>
     </div>
 
-   <div class="contact-info-section-bottom">
-  <h3 class="contact-info-title-bottom">Entre em</h3><h3 class="contact-info-title-bottom-gradient">Contato</h3>
-  <p class="section-subtitle-contact-bottom">Vamos cuidar do seu sorriso? Descubra como podemos ajudar você.</p>
-  <div class="contact-items-grid-container"> <div class="contact-info-card">
-      <div class="icon-wrapper">
-        <i class="fas fa-phone"></i>
-      </div>
-      <h4>Telefone</h4>
-      <p>(11) 9 9999-9999</p>
-      <p class="small-text">Ligue para nós</p>
-    </div>
-
-    <div class="contact-info-card">
-      <div class="icon-wrapper">
-        <i class="fas fa-envelope"></i>
-      </div>
-      <h4>E-mail</h4>
-      <p>contato&#64;mentaplanos.com.br</p>
-      <p class="small-text">Envie sua mensagem</p>
-    </div>
-
-    <div class="contact-info-card">
-      <div class="icon-wrapper">
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
-      <h4>Endereço</h4>
-      <p>Rua das Mentas, 123</p>
-      <p>São Paulo - SP - Brasil</p>
-    </div>
-
-    <div class="contact-info-card">
-      <div class="icon-wrapper">
-        <i class="fas fa-clock"></i>
-      </div>
-      <h4>Horário</h4>
-      <p>Segunda a Sexta:</p>
-      <p>08:00 às 18:00</p>
-      <p>Sábado: 08:00 às 12:00</p>
-    </div>
-
+    <div class="contact-info-section-bottom">
+      <h3 class="contact-info-title-bottom">Entre em</h3><h3 class="contact-info-title-bottom-gradient">Contato</h3>
+      <p class="section-subtitle-contact-bottom">Vamos cuidar do seu sorriso? Descubra como podemos ajudar você.</p>
+      <div class="contact-items-grid-container">
+        <div class="contact-info-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h4>Telefone</h4>
+          <p>(11) 9 9999-9999</p>
+          <p class="small-text">Ligue para nós</p>
         </div>
+
+        <div class="contact-info-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h4>E-mail</h4>
+          <p>contato&#64;mentaplanos.com.br</p>
+          <p class="small-text">Envie sua mensagem</p>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h4>Endereço</h4>
+          <p>Rua das Mentas, 123</p>
+          <p>São Paulo - SP - Brasil</p>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h4>Horário</h4>
+          <p>Segunda a Sexta:</p>
+          <p>08:00 às 18:00</p>
+          <p>Sábado: 08:00 às 12:00</p>
         </div>
       </div>
-  </section>
+    </div>
+  </div>
+</section>

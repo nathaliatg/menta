@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
 
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -9,9 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
+  standalone: true,
   imports: [
     CommonModule,
+    FormsModule, 
     HeaderComponent,
     HeroComponent,  
     PlanListComponent, 
